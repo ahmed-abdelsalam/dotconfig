@@ -1,0 +1,15 @@
+configuration {
+    display-drun: "Apps";
+    drun-display-format: "{name}";
+    show-icons:  true;
+    modi: "window,drun,run,filebrowser,keys,calc,emoji,combi";
+    font: "CodeNewRoman Nerd Font 10";
+    icon-theme: "Arc";
+}
+
+@theme "spotlight-dark"
+/* Dark theme. */
+window {
+    width: 800px;
+    opacity: 0.5;
+}
