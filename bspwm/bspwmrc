@@ -41,7 +41,7 @@ nm-applet &  disown
 mpd & disown
 dunst & disown
 /usr/libexec/xfce-polkit & disown
-wpg -s $( realpath /home/void/Pictures/desktop.png) & disown
+wpg -s $( realpath /home/void/.config/wpg/.current) & disown
 /usr/bin/emacs --daemon &  disown
 gamemoded & disown
 # /home/void/.config/wal/launch.sh /usr/share/void-artwork/desktop.png &
