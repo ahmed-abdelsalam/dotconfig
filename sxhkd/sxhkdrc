@@ -180,6 +180,9 @@ XF86AudioRaiseVolume
 XF86AudioMute
 	pactl -- set-sink-mute 0 toggle
 
-
+super + F11
+	ddcutil setvcp 10 - 25
+super + F12
+	ddcutil setvcp 10 + 25
 Print
 	flameshot gui
