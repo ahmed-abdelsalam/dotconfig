@@ -221,6 +221,7 @@ config.bind('navigate', 'navigate')
 
 # AdBlock
 c.content.blocking.enabled = True
+c.content.blocking.method = 'both'
 c.content.blocking.adblock.lists = [
     'https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt',
     'https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2020.txt',
@@ -235,6 +236,12 @@ c.content.blocking.adblock.lists = [
 # Youtube vide on MPV
 # config.bind('M', ' spawn mpv -F {url}')
 # config.bind('1', 'spawn mpv --profile=144p {url}')
+config.bind('~1', 'spawn mpv --profile=144p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_144p.mp4"   {{url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
+config.bind('~2', 'spawn mpv --profile=240p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_240p.mp4"   {{url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
+config.bind('~3', 'spawn mpv --profile=360p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_360p.mp4"   {{url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
+config.bind('~4', 'spawn mpv --profile=480p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_480p.mp4"   {{url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
+config.bind('~7', 'spawn mpv --profile=720p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_720p.mp4"   {{url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
+config.bind('~8', 'spawn mpv --profile=1080p --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_1080p.mp4"  {{url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
 config.bind('1', 'hint links spawn mpv --profile=144p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_144p.mp4"   {{hint-url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
 config.bind('2', 'hint links spawn mpv --profile=240p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_240p.mp4"   {{hint-url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
 config.bind('3', 'hint links spawn mpv --profile=360p  --ytdl --stream-record="/home/void/drives/#3_Store/yt-dl/{}_{{title}}_360p.mp4"   {{hint-url}}'.format(datetime.now().strftime("%y%m%d%H%M")))
