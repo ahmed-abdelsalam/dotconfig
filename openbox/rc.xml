@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Raven-Cyan</name>
+    <name>Raven-Crimson</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -427,6 +427,24 @@
           <name>rofi</name>
         </startupnotify>
         <command>rofi -show drun</command>
+      </action>
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>rofi</name>
+        </startupnotify>
+        <command>kitty</command>
+      </action>
+    </keybind>
+    <keybind key="C-W-r">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>rofi</name>
+        </startupnotify>
+        <command>openbox --restart</command>
       </action>
     </keybind>
     <keybind key="W-t">

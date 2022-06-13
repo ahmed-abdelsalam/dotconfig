@@ -1,6 +1,6 @@
 /usr/libexec/xfce-polkit &
 nm-applet &
-tint2 &
+# tint2 &
 rofi -show run &
-# polybar &
+polybar &
 xfce4-power-manager --daemon &

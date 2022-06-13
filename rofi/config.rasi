@@ -2,12 +2,12 @@ configuration {
     display-drun: "Apps";
     drun-display-format: "{name}";
     show-icons:  true;
-    modi: "window,drun,run,filebrowser,keys,calc,emoji,combi";
+    modi: "window,drun,calc";
     font: "CodeNewRoman Nerd Font 10";
     icon-theme: "Arc";
 }
 
-@theme "spotlight-dark"
+@theme "squared-material-red"
 /* Dark theme. */
 window {
     width: 800px;

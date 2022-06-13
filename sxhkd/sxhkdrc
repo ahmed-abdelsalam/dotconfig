@@ -48,9 +48,12 @@ super + g
 # state/flags
 #
 
+super + f
+    if [ -z "$(bspc query -N -n .focused.fullscreen)" ]; then bspc node focused -t fullscreen; else  bspc node focused -t tiled; fi
+
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t,s}
+	bspc node -t {tiled,pseudo_tiled,floating}
 
 # set the node flags
 super + ctrl + {m,x,y,z}

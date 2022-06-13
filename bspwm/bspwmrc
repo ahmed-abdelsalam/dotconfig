@@ -3,7 +3,7 @@ bspc rule -r  "*"
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d      嗢 戮  -
+bspc monitor -d     嗢  -
 
 bspc config border_width  0 
 #. "${HOME}/.cache/wal/colors.sh"
@@ -12,7 +12,11 @@ then
     . "${HOME}/.config/bspwm/bspwm_colors.sh"
 fi
   
-bspc config window_gap          50
+bspc config top_padding        100
+bspc config bottom_padding     60
+bspc config left_padding       100
+bspc config right_padding      100 
+bspc config window_gap          15
 bspc config normal_border_color "#000000"
 #bspc config active_border_color "$color5"
 #bspc config focused_border_color "$color5"
@@ -35,7 +39,7 @@ bspc config pointer_action2 resize_corner
 
 #AutoStart
 $HOME/.config/polybar/launch.sh & disown
-setxkbmap -option grp:alt_caps_toggle us,ar &
+setxkbmap -option grp:alt_shift_toggle us,ar &
 xfce4-power-manager --daemon &  disown
 nm-applet &  disown
 mpd & disown
@@ -78,10 +82,10 @@ bspc rule -a "vlc" desktop='^5' follow=on
 
 # Workspace 6
 bspc rule -a "Steam" desktop='^6' follow=on
-
+bspc rule -a "Epic Games Launcher" desktop='^6' follow=on
+bspc rule -a "steam_app_0" desktop='^6'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Screenkey manage=off
-
 bspc rule -a Kupfer.py focus=on
 
 #AutoStart
