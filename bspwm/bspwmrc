@@ -11,11 +11,12 @@ if [[ -f "${HOME}/.config/bspwm/bspwm_colors.sh" ]]
 then
     . "${HOME}/.config/bspwm/bspwm_colors.sh"
 fi
-  
-bspc config top_padding        100
-bspc config bottom_padding     60
-bspc config left_padding       100
-bspc config right_padding      100 
+
+bspc config focus_follows_pointer true
+bspc config top_padding        30
+bspc config bottom_padding     30
+bspc config left_padding       30
+bspc config right_padding      30 
 bspc config window_gap          15
 bspc config normal_border_color "#000000"
 #bspc config active_border_color "$color5"
@@ -69,7 +70,8 @@ bspc rule -a "Brave-browser-nightly" desktop='^2'
 bspc rule -a "Code - OSS" desktop='^3' follow=on
 bspc rule -a "Emacs" desktop='^3' follow=on
 bspc rule -a "Sublime_text" desktop='^3' follow=on
-
+bspc rule -a "sublime_text" desktop='^3' follow=on
+bspc rule -a "sticky_note" state=floating sticky=on focus=on rectangle=400x400+100+100
 
 # Workspace 4
 bspc rule -a '@joplinapp-desktop' desktop='^4' follow=on

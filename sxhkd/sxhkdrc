@@ -5,7 +5,7 @@
 #Terminal
 super + Return
 	kitty
-shift + Return
+super + F1
 	thunar
 # program launcher
 super + @space

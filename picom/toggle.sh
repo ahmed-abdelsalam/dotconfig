@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! pgrep -x picom; then 
-picom --experimental-backends;
+picom;
 else 
 killall -q picom;
 fi
