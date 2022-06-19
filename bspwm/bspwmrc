@@ -19,12 +19,7 @@ bspc config left_padding       30
 bspc config right_padding      30 
 bspc config window_gap          15
 bspc config normal_border_color "#000000"
-#bspc config active_border_color "$color5"
-#bspc config focused_border_color "$color5"
-# Use the line below if you are on bspwm >= 0.9.4
-#bspc config presel_feedback_color "$color5"
-# Use the line below if you are on bspwm < 0.9.4
-#bspc config presel_border_color "$color1"
+
 
 
 bspc config split_ratio          0.53
@@ -47,8 +42,8 @@ mpd & disown
 dunst & disown
 /usr/libexec/xfce-polkit & disown
 wpg -s $( realpath /home/void/.config/wpg/.current) & disown
-/usr/bin/emacs --daemon &  disown
-gamemoded & disown
+# /usr/bin/emacs --daemon &  disown
+# gamemoded & disown
 # /home/void/.config/wal/launch.sh /usr/share/void-artwork/desktop.png &
 # albert &
 # /home/void/.config/bspwm/bspwm_colors.sh &bash /home/void/.config/bspwm/bspwm_colors.sh &  disown
@@ -98,5 +93,5 @@ bspc rule -a Kupfer.py focus=on
 while bspc subscribe -c 1 node_focus; do
    bw="$(bspc config border_width)"
    bspc config border_width "$bw"
-   bspc config -n focused border_width "$((bw + 3))"
+   bspc config -n focused border_width "$((bw + 1))"
 done

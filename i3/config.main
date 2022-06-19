@@ -6,7 +6,7 @@ set $term kitty
 
 set $inner_gap 10
 set $outer_gap 20
-set $border_width 1
+set $border_width 3
 
 
 # smart_gaps on
@@ -56,7 +56,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $term
 
 # Start a terminal
-bindsym Shift+Return exec thunar
+bindsym $mod+F1 exec thunar
 
 
 
@@ -162,7 +162,7 @@ for_window [class="^Arandr$"]       floating enable
 bindsym $mod+Ctrl+c reload
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+r restart
+bindsym $mod+Ctrl+r exec --no-startup-id cat ~/.config/i3/config.main ~/.config/i3/config.colors > ~/.config/i3/config & i3-msg restart
 
 # Lock screen
 bindsym $mod+Shift+x exec betterlockscreen -l dimblur
@@ -182,12 +182,12 @@ mode "resize"
 }
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym q exec --no-startup-id i3exit logout, mode "default"
+    bindsym l exec --no-startup-id loginctl lock-session 
+    bindsym q exec --no-startup-id loginctl terminate-user $(whoami)
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym p exec --no-startup-id i3exit shutdown, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"    
+    bindsym r exec --no-startup-id loginctl reboot
+    bindsym p exec --no-startup-id loginctl poweroff 
+    bindsym s exec --no-startup-id loginctl suspend   
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
