@@ -5,20 +5,20 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d     嗢  -
 
-bspc config border_width  0 
+bspc config border_width  2 
 #. "${HOME}/.cache/wal/colors.sh"
 if [[ -f "${HOME}/.config/bspwm/bspwm_colors.sh" ]]
 then
     . "${HOME}/.config/bspwm/bspwm_colors.sh"
 fi
 
-bspc config focus_follows_pointer true
+# bspc config focus_follows_pointer true
 bspc config top_padding        30
-bspc config bottom_padding     30
-bspc config left_padding       30
-bspc config right_padding      30 
-bspc config window_gap          15
-bspc config normal_border_color "#000000"
+bspc config bottom_padding     10
+bspc config left_padding       20
+bspc config right_padding      20 
+bspc config window_gap          20
+bspc config normal_border_color "#242410"
 
 
 
@@ -27,6 +27,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config border_radius 35
 
+bspc config pointer_motion_interval 20
 bspc config pointer_modifier mod4
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
@@ -35,12 +36,12 @@ bspc config pointer_action2 resize_corner
 
 #AutoStart
 $HOME/.config/polybar/launch.sh & disown
-setxkbmap -option grp:alt_shift_toggle us,ar &
-xfce4-power-manager --daemon &  disown
+setxkbmap -option grp:alt_space_toggle us,ar &
+#xfce4-power-manager --daemon &  disown
 nm-applet &  disown
 mpd & disown
 dunst & disown
-/usr/libexec/xfce-polkit & disown
+pgrep -x "xfce-polkit" > /dev/null && echo "POLKIT RUNNING" || /usr/libexec/xfce-polkit & disown ;
 wpg -s $( realpath /home/void/.config/wpg/.current) & disown
 # /usr/bin/emacs --daemon &  disown
 # gamemoded & disown
@@ -89,9 +90,10 @@ bspc rule -a Kupfer.py focus=on
 #. "./autostart" & disown
 
 
-
-while bspc subscribe -c 1 node_focus; do
-   bw="$(bspc config border_width)"
-   bspc config border_width "$bw"
-   bspc config -n focused border_width "$((bw + 1))"
-done
+# remove border from un-focused windows
+# Slow
+# while bspc subscribe -c 1 node_focus; do
+#    bw="$(bspc config border_width)"
+#    bspc config border_width "$bw"
+#    bspc config -n focused border_width "$((bw + 1))"
+# done

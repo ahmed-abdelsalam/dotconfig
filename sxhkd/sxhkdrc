@@ -49,7 +49,7 @@ super + g
 #
 
 super + f
-    if [ -z "$(bspc query -N -n .focused.fullscreen)" ]; then bspc node focused -t fullscreen; else  bspc node focused -t tiled; fi
+    [ -z "$(bspc query -N -n .focused.fullscreen)" ] && bspc node focused -t fullscreen ||  bspc node focused -t tiled
 
 # set the window state
 super + {t,shift + t,s}
@@ -74,8 +74,8 @@ super + {p,b,comma,period}
 # focus the next/previous window in the current desktop
 # super + {_,shift + }c
 # 	bspc node -f {next,prev}.local.!hidden.window
-super + {Right,Left }
-	bspc node -f {next,prev}.local.!hidden.window
+super + {Right,Left, Up, Down }
+	bspc node -f {east, west, north, south}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}

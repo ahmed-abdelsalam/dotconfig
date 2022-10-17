@@ -7,7 +7,7 @@ dunst &
 $HOME/.config/polybar/launch.sh &
 setxkbmap -option grp:alt_caps_toggle us,ar &
 # albert &
-/usr/bin/emacs --daemon &
+# /usr/bin/emacs --daemon &
 nm-applet &
 
 xfce4-power-manager --daemon &

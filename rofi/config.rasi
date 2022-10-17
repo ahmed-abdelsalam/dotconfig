@@ -2,7 +2,7 @@ configuration {
     display-drun: "Apps";
     drun-display-format: "{name}";
     show-icons:  true;
-    modi: "window,drun,calc";
+    modi: "window,drun";
     font: "CodeNewRoman Nerd Font 10";
     icon-theme: "Arc";
 }
